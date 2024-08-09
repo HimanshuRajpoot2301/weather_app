@@ -1,0 +1,20 @@
+{
+  "favorites": [
+    {
+      "id": "1d1a",
+      "name": "Jablonné nad Orlicí",
+      "weather": "Clouds",
+      "temp": "20",
+      "icon": "04d",
+      "unit": "metric"
+    },
+    {
+      "id": "7379",
+      "name": "Gwalior",
+      "weather": "Clouds",
+      "temp": "28",
+      "icon": "04n",
+      "unit": "metric"
+    }
+  ]
+}
