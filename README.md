@@ -22,17 +22,17 @@ Installation
 Prerequisites
 Ensure you have the following installed:
 
-Node.js (v14 or later)
-npm (or yarn)
-Clone the Repository
-bash
-Copy code
-git clone https://github.com/HimanshuRajpoot2301/weather_app.git
-cd weather-app
-Install Dependencies
-bash
-Copy code
-npm install
+# Node.js (v14 or later)
+# npm (or yarn)
+# Clone the Repository
+# bash
+# Copy code
+# git clone https://github.com/HimanshuRajpoot2301/weather_app.git
+# cd weather-app
+# Install Dependencies
+# bash
+# Copy code
+# npm install
 # or
 yarn install
 Start the JSON Server
