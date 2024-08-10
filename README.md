@@ -48,6 +48,9 @@ npm start
 # or
 yarn start
 
+## Screenshots
+
+<img src="./src/images/897648B1-360D-4385-9ECE-3F50A406B5AC.jpeg" style="box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.8)">
 
 Usage
 
