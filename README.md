@@ -27,8 +27,8 @@ npm (or yarn)
 Clone the Repository
 bash
 Copy code
-git clone https://github.com/your-username/weather-dashboard.git
-cd weather-dashboard
+git clone https://github.com/HimanshuRajpoot2301/weather_app.git
+cd weather-app
 Install Dependencies
 bash
 Copy code
@@ -47,7 +47,7 @@ Copy code
 npm start
 # or
 yarn start
-The application will be available at http://localhost:3000.
+
 
 Usage
 

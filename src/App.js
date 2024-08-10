@@ -8,7 +8,7 @@ import WeatherInfo from './components/WeatherInfo';
 import UnitSelector from './components/UnitSelector';
 import LoadingSpinner from './components/LoadingSpinner';
 
-const FAVORITES_API_URL = 'http://localhost:3000/favorites';
+const FAVORITES_API_URL = 'https://server-fav.onrender.com/favorites';
 
 function App() {
   const API_KEY = 'be0485b995f6ea88cf7443cab7743963';
