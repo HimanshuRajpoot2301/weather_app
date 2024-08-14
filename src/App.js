@@ -8,7 +8,7 @@ import WeatherInfo from './components/WeatherInfo';
 import UnitSelector from './components/UnitSelector';
 import LoadingSpinner from './components/LoadingSpinner';
 
-const FAVORITES_API_URL = 'https://server-fav.onrender.com/favorites';
+const FAVORITES_URL = 'https://server-fav.onrender.com/favorites';
 
 function App() {
   const API_KEY = 'be0485b995f6ea88cf7443cab7743963';
@@ -19,12 +19,10 @@ function App() {
   const [symbol, setSymbol] = useState('°C');
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [userLocation, setUserLocation] = useState(null);
   const [favorites, setFavorites] = useState([]);
-  const [lastSearchedCity, setLastSearchedCity] = useState(localStorage.getItem('lastSearchedCity') || '');
 
   useEffect(() => {
-    axios.get(FAVORITES_API_URL).then(response => {
+    axios.get(FAVORITES_URL).then(response => {
       setFavorites(response.data);
     }).catch(error => {
       setError('Failed to fetch favorite cities.');
@@ -49,7 +47,6 @@ function App() {
     axios.get(url).then(response => {
       setData(response?.data);
       localStorage.setItem('lastSearchedCity', location);
-      setLastSearchedCity(location);
     })
       .catch((error) => {
         setError(error.response?.data?.message || 'An error occurred');
@@ -70,32 +67,9 @@ function App() {
     }
   };
 
-  const getUserLocation = () => {
-    if (userLocation) {
-      setUserLocation(null);
-      return;
-    }
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          setUserLocation({
-            latitude: position.coords.latitude,
-            longitude: position.coords.longitude,
-          });
-          setError(null);
-        },
-        (err) => {
-          setError(err.message);
-        }
-      );
-    } else {
-      setError('Geolocation is not supported by this browser.');
-    }
-  };
-
   const addFavorite = () => {
     if (data) {
-      axios.post(FAVORITES_API_URL, {
+      axios.post(FAVORITES_URL, {
         name: data.name,
         weather: data.weather[0].main,
         temp: data.main.temp.toFixed(),
@@ -111,7 +85,7 @@ function App() {
   };
 
   const removeFavorite = (id) => {
-    axios.delete(`${FAVORITES_API_URL}/${id}`).then(() => {
+    axios.delete(`${FAVORITES_URL}/${id}`).then(() => {
       setFavorites(favorites.filter(fav => fav.id !== id));
     }).catch(error => {
       setError('Failed to remove from favorites.');

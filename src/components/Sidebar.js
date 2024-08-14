@@ -1,7 +1,5 @@
 import React from 'react';
 import { AwesomeButton } from 'react-awesome-button';
-
-
 import '../index.css'
 const Sidebar = ({ favorites, removeFavorite }) => {
   return (
